@@ -1,0 +1,10 @@
+<!-- <h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p> -->
+
+<h2>Articles</h2>
+
+<%= link_to 'Click here to add a new article', new_article_path %>
+
+<% @articles.each do |a| %>
+<li><%= link_to a.title, a%>: <%= a.content %> <%= link_to raw("&#128465;"), article_path(a), method: :delete, data:{confirm: "Are you sure?"}%> <%= link_to raw("&#9998;"), edit_article_path(a) %></li>
+<% end %>
